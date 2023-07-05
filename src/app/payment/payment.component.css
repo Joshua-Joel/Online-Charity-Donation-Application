@@ -1,0 +1,235 @@
+@import url('./font.css');
+@import url('./bootstrap.css');
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/poppins/poppins-v5-latin-500.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Medium"), local("Poppins-Medium"), url("./fonts/poppins/poppins-v5-latin-500.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-500.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-500.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-500.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-500.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-500italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  src: url("./fonts/poppins/poppins-v5-latin-500italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Medium Italic"), local("Poppins-MediumItalic"), url("./fonts/poppins/poppins-v5-latin-500italic.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-500italic.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-500italic.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-500italic.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-500italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/poppins/poppins-v5-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins SemiBold"), local("Poppins-SemiBold"), url("./fonts/poppins/poppins-v5-latin-600.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-600.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-600.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-600.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-600.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/poppins/poppins-v5-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Bold"), local("Poppins-Bold"), url("./fonts/poppins/poppins-v5-latin-700.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-700.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-700.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-700.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-700.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-700italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 700;
+  src: url("./fonts/poppins/poppins-v5-latin-700italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Bold Italic"), local("Poppins-BoldItalic"), url("./fonts/poppins/poppins-v5-latin-700italic.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-700italic.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-700italic.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-700italic.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-700italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-800 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/poppins/poppins-v5-latin-800.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins ExtraBold"), local("Poppins-ExtraBold"), url("./fonts/poppins/poppins-v5-latin-800.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-800.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-800.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-800.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-800.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-800italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 800;
+  src: url("./fonts/poppins/poppins-v5-latin-800italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins ExtraBold Italic"), local("Poppins-ExtraBoldItalic"), url("./fonts/poppins/poppins-v5-latin-800italic.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-800italic.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-800italic.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-800italic.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-800italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-900 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: url("./fonts/poppins/poppins-v5-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Black"), local("Poppins-Black"), url("./fonts/poppins/poppins-v5-latin-900.eot?#iefix") format("embedded-opentype"), url("./fonts/poppins/poppins-v5-latin-900.woff2") format("woff2"), url("./fonts/poppins/poppins-v5-latin-900.woff") format("woff"), url("./fonts/poppins/poppins-v5-latin-900.ttf") format("truetype"), url("./fonts/poppins/poppins-v5-latin-900.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+  background-color: #fff;
+  width: 500px;
+  padding: 25px;
+  margin: 25px auto 0;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+  border-radius:25px;
+}
+.wrapper h2{
+  background-color: #4292dc;
+  color: #fcfcfc;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px dotted #333;
+}
+h4{
+  padding-bottom: 5px;
+  color: #4292dc
+}
+.input-group{
+  margin-bottom: 8px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+.input-box{
+  width: 100%;
+  margin-right: 12px;
+  position: relative;
+}
+.input-box:last-child{
+  margin-right: 0;
+}
+.name{
+  padding: 14px 10px 14px 50px;
+  width: 100%;
+  background-color: #fcfcfc;
+  border: 1px solid #00000033;
+  outline: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  border-radius: 3px;
+  color: #333;
+}
+.name:focus, .dob:focus{
+  -webkit-box-shadow:0 0 2px 1px #21cdd3;
+  -moz-box-shadow:0 0 2px 1px #21cdd3;
+  box-shadow: 0 0 2px 1px #21cdd3;
+  border: 1px solid #21cdd3;
+}
+.input-box .icon{
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #333;
+  background-color: #f1f1f1;
+  border-radius: 2px 0 0 2px;
+  transition: 0.3s;
+  font-size: 20px;
+  pointer-events: none;
+  border: 1px solid #00000033;
+  border-right: none;
+}
+.name:focus + .icon{
+  background-color: #21c7d3;
+  color: #fff;
+  border-right: 1px solid #21cdd3;
+  border: none;
+  transition: 1s;
+}
+.dob{
+  width: 30%;
+  padding: 14px;
+  text-align: center;
+  background-color: #fcfcfc;
+  transition: 0.3s;
+  outline: none;
+  border: 1px solid #c0bfbf;
+  border-radius: 3px;
+}
+.radio{
+  display: none;
+}
+.input-box label{
+  width: 50%;
+  padding: 13px;
+  background-color: #fcfcfc;
+  display: inline-block;
+  /* float: left; */
+  text-align: center;
+  border: 1px solid #c0bfbf;
+}
+.input-box label:first-of-type{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: none;
+}
+.input-box label:last-of-type{
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.radio:checked + label{
+  background-color: #21cdd3;
+  color: #fff;
+  transition: 0.5s;
+}
+.input-box select{
+  display: inline-block;
+  width: 50%;
+  padding: 12px;
+  background-color: #fcfcfc;
+  /* float: left; */
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #c0bfbf;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.input-box select:focus{
+  background-color: #21cdd3;
+  color: #fff;
+  text-align: center;
+}
+button{
+                    background: transparent;
+                    border: none;
+                    background: #6dabe4;
+                    color: #fff;
+                    padding: 15px;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    transition: all 0.35s ease;font-family: poppins;
+}
+button:hover{
+  cursor: pointer;
+  background: #4292dc;
+}
+
+
+
+
+

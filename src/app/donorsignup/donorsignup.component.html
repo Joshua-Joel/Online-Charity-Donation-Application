@@ -1,0 +1,64 @@
+
+    <div id="loading">
+
+    </div>
+    <div class="main" style="background-color: #f8f8f8;position: relative;height: 89ex;bottom: 5px;">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container" id="c2" >
+                <div class="signup-content" style="height:69ex;">
+                    <div class="signup-form" style="height: auto;">
+                        <h2 class="form-title">Donar sign up</h2>
+                        <form #donorup="ngForm" class="register-form" id="register-form"  (ngSubmit)="donorsignup(donorup.value)"  autocomplete="off" >
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" [(ngModel)]="donor.name"  placeholder="Your Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" [(ngModel)]="donor.email" id="email" required placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group" id="passdiv">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" [(ngModel)]="donor.pass" required placeholder="Password"/>
+                            </div>
+                            <br><br>
+                            <div class="form-group" id="div1">
+                                <label for="re-pass"><i class="zmdi zmdi-smartphone"></i></label>
+                                <input type="number" name="mobile_number" id="pno" required placeholder="Mobile number" [(ngModel)]="donor.mobile_number" required />
+                            </div>
+                            &nbsp;<a style="font-family: Poppins;" routerLink="/login">click here to sign</a>
+                            <ng-container *ngIf="status=='failed'" >
+                              <br>
+                              <p style="font-family: Poppins;">Sign up failed...!Please try again</p>
+                            </ng-container>
+                            <ng-container *ngIf="status=='success'" >
+                              <br>
+                              <p style="font-family: Poppins;">Registered successfully...! </p>
+                            </ng-container>
+                            <ng-container *ngIf="status=='invalid_email'" >
+                              <br>
+                              <p style="font-family: Poppins;">Email is associated with another account...! </p>
+                            </ng-container>
+                            <ng-container *ngIf="status=='invalid_mobile'" >
+                              <br>
+                              <p style="font-family: Poppins;">Invalid mobile number...! </p>
+                            </ng-container>
+                            <ng-container *ngIf="status=='invalid_password'" >
+                              <br>
+                              <p style="font-family: Poppins;">password must have atleast 1 number,Uppercase,lowercase letter & length greater than 7 </p>
+                            </ng-container>
+                            <br><br><br><br><br><br><br><br>
+                            <br><br><br><br>
+                            <div class="form-group form-button" id="div3" style="width: auto;">
+                              <input type="submit" name="signup" id="signup" class="form-submit" value="Create Account"  />
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+

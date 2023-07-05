@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Fund</title>
+      <link href="/raisefund/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+      <script src="/raisefund/node_modules/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <title>Payment Form</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white" style="max-height:70px;z-index:10;" style="position: fixed; width: 100%;top: 0px;">
+    <a class="navbar-brand" href="#"><span id="bd-title" style="font-family:'Brush Script MT';font-size: xx-large;"><img src="assets/images/logo.jpg" style="max-height:50px;">Charity</span></a>
+
+    <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button  type="button" class="btn btn-danger reg2" (click)="logout()" >Logout</button>
+    </div>
+  </nav>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="wrapper" style="position: relative; top:40px;box-shadow:inset ;">
+        <h2 style="font-family: poppins;">Payment</h2>
+        <form #payment="ngForm"  id="login-form" (ngSubmit)="makePayment(payment.value)">
+            <h5 style="font-family: poppins;"><strong style="color: cornflowerblue;">Organization:&nbsp;&nbsp;</strong> {{orgName}}</h5>
+            <h5 style="font-family: poppins;"><strong style="color: cornflowerblue;">Fundname:&nbsp;&nbsp;</strong>{{fundName}}</h5>
+            <h5 style="font-family: poppins;"><strong style="color: cornflowerblue;">max amount:&nbsp;&nbsp;</strong>{{max | currency:'INR'}}  </h5>
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Account holder name" name="name" required class="name" [(ngModel)]="data.name">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="number" placeholder="Card Number" name="cardno" required  class="name" [(ngModel)]="data.cardno">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Card CVV" required name="cvv"  class="name" patttern="[0-9]*" placeholder="Card CVV" style="width: auto;" [(ngModel)]="data.cvv">
+                </div>
+                <div class="input-group" style="margin-top: 12px;">
+                  <div class="input-box">
+                      <input type="number" name="amount"  required  placeholder="Amount(min 100)" min="500" max="15000" step="100" required class="name" [(ngModel)]="data.amount">
+                  </div>
+              </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box" id="submit">
+                    <button style="width: 100%;" type="submit">PAY NOW</button>
+                </div>
+            </div>
+            <a routerLink="/home" style="text-decoration: underline;">Go home</a>
+            <ng-container *ngIf="status==='success' " >
+              <p style="font-family: poppins;color: green;">Payment successful..!</p>
+            </ng-container>
+            <ng-container *ngIf="status==='failed' " >
+              <p style="font-family: poppins;color: red;">Payment failed..!</p>
+            </ng-container>
+            <ng-container *ngIf="status==='less' " >
+              <p style="font-family: poppins;color: red;">Please enter amount greater than 100..!</p>
+            </ng-container>
+            <ng-container *ngIf="status==='invalid' " >
+              <p style="font-family: poppins;color: red;">Please enter amount less than {{max}}..!</p>
+            </ng-container>
+        </form>
+    </div>
+</body>
+
+</html>

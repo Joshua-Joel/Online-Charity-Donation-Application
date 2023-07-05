@@ -1,0 +1,94 @@
+<app-slide></app-slide>
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="max-height:70px;z-index:10;;" style="position: fixed;z-index: 400; width: 100%;top: 0px;">
+    <a class="navbar-brand" href="#"><span id="bd-title" style="font-family:'Brush Script MT';font-size: xx-large;"><img src="assets/images/logo.jpg" style="max-height:50px;">Charity</span></a>
+
+    <div class="collapse navbar-collapse bg-white" style="width:100%;color: #12122d" id="navdp">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class=" reg1">{{donarEmail}}</label>
+      <a href="#donate"><button  type="button" class="btn btn-primary reg"  >Donate now</button></a>
+      <button  type="button" class="btn btn-danger reg2" (click)="logout()" >Logout</button>
+    </div>
+  </nav><br><br>
+  <nav class="nav2" style="position: absolute;top: 75px;z-index: 300; width: 100%;" >
+    <ul class="ul2">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <li id="seven" style="font-family: poppins;text-decoration: underline;"><a id="seven" routerLink="/change_password">change password</a></li>
+        <li id="seven"  style="font-family: poppins;text-decoration: underline;"><a id="seven" routerLink="/topdonors">Top donors</a></li>
+        <li id="seven" style="font-family: poppins;text-decoration: underline;"><a id="seven" routerLink="/mydonations">My donations</a></li>
+    </ul>
+  </nav>
+  <br><br>
+  <!------------------------------------------------------Header---------------------------------------------------->
+
+  <!------------------------------------------------------Carousel---------------------------------------------------->
+  <div id="carousel1" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+  <div class="carousel-item active">
+  <img src="../../assets/images/cover.jpg" class="d-block w-100 img-fluid" alt="1">
+  </div>
+  <div class="carousel-item">
+  <img src="../../assets/images/22.jpg" class="d-block w-100 img-fluid" alt="2">
+  </div>
+  <div class="carousel-item">
+  <img src="../../assets/images/33.png" class="d-block w-100 img-fluid" alt="3">
+  </div>
+  <div class="carousel-item">
+  <img src="../../assets/images/44.png" class="d-block w-100 img-fluid" alt="4">
+  </div>
+  </div>
+  </div>
+
+  <!------------------------------------------------------Carousel---------------------------------------------------->
+
+  <!------------------------------------------------------Cards---------------------------------------------------->
+  <section id="donate"  >
+  <div class="container-fluid pt-2 pb-2" style="background-color:#F0FFFF; border-bottom:1px solid darkgray;">
+  <div class="row" >
+  <div class="col-sm-12" >
+  <div id="inm" class="carousel slide" data-ride="carousel" >
+    <div class="carousel-inner" >
+      <div class="carousel-item active" >
+        <div class="container" >
+          <div class="row">
+            <ng-container *ngFor="let item of fundList">
+                <ng-container *ngIf="item.total_amount>item.recv_amount" >
+                  <div class="col-sm-6 col-lg-3">
+                    <div class="card" style="margin: 7px;">
+                      <img src="assets/images/card.jpg" class="img-fluid" alt="card1">
+                        <div class="card-body">
+                          <h3 class="card-title"><b>{{item.fund_name}}</b></h3>
+                          <h5 class="card-title"><b>{{item.organisation}}</b></h5>
+                          <h6 class="card-title"><b>Total amount: {{item.total_amount | currency:'INR'}}</b></h6>
+                          <h6 class="card-title"><b>Received: {{item.recv_amount | currency:'INR'}}</b></h6>
+                          <p class="card-text">{{item.desc}}</p>
+                          <button class="btn btn-primary" type="button" (click)="assign(item._id,item.fund_name,item.organisation,item.total_amount-item.recv_amount)" >Donate</button>
+                          <br>
+                        </div>
+                    </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footerWrapper" style="background-color: #12122d;">
+
+    <div class="pageCopyrightFooter">
+      <div class="container pageCopyrightFooterContainer">
+        <div class="row">
+
+          <div class="col-sm-6" style="left: 130px;">
+            <ul class="list-inline footerCopyrightsLinks text-right">
+              <li class="list-inline-item" style="color: #9FACBE;font-size: 12px;">&COPY; Created by Joshua Joel J , Reshman Bablo , Pruthviraj</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+

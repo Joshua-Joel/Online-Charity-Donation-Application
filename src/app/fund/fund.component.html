@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raise Fund</title>
+
+    <!-- Font Icon -->
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="fund.component.css">
+</head>
+<body>
+
+    <div class="main" style="position: relative;bottom: 100px;">
+
+        <!-- Sign up form -->
+        <section class="fund" style="background-color: #f8f8f8;height: 64ex;">
+            <div class="container" >
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Raise Fund</h2>
+                        <form #fund="ngForm" method="POST" class="register-form" id="register-form" (ngSubmit)="create(fund.value)">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="org" id="name" placeholder="Organization Name" required [(ngModel)]="data.org" style="font-size: 16px;"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="fund"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="fname" id="fund" placeholder="Fund Name" required [(ngModel)]="data.fname" style="font-size: 16px;"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="number" min="5000" name="total" id="pass" placeholder="Fund Amount" required [(ngModel)]="data.total" style="font-size: 16px;"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="desc"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="desc" id="desc" placeholder="Fund Description" required [(ngModel)]="data.desc" style="font-size: 16px;"/>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="raisefund" id="raisefund" class="form-submit" value="Raise Fund"/>
+                            </div>
+                        </form>
+                        <br>
+                        <ng-container *ngIf="status==='success'" >
+                          <p style="font-family: poppins;">Fund created successfully..!</p>
+                          <a routerLink="/fundraiser" >Go home</a>
+                        </ng-container>
+                        <ng-container *ngIf="status==='failed'" >
+                          <p style="font-family: poppins;">Fund creation failed..!</p>
+                        </ng-container>
+                        <a routerLink="/fundraiser" >Go back</a>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="/assets/images/fund.avif" alt="sing up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

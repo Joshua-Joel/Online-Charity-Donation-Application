@@ -1,0 +1,49 @@
+<app-slide></app-slide>
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="max-height:70px;z-index:10;" style="position: fixed; width: 100%;top: 0px;left: 17px;">
+  <a class="navbar-brand" href="#"><span id="bd-title" style="font-family:'Brush Script MT';font-size: xx-large;"><img src="assets/images/logo.jpg" style="max-height:50px;">Charity</span></a>
+
+  <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button  type="button" class="btn btn-danger reg2" (click)="logout()" >Logout</button>
+  </div>
+</nav>
+<br><br><br><br>
+<div class="container">
+  <div class="jumbotron" style="height: auto;">
+    <div class="button">
+        <button type="button" class="btn btn-primary" (click)="goHome()" >&lt;- Back to home</button>&nbsp;
+    </div>
+    <br>
+    <ng-container *ngIf="flag==1">
+      <p style="font-family: poppins;color: yellowgreen;font-size: larger;"><b>Congrats...! You are among the top 10 donors.</b></p>
+    </ng-container>
+      <div class="card">
+          <div class="card-header">
+            <h5>Top donors</h5>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr >
+                  <th scope="col">#</th>
+                  <th scope="col">Donor Name</th>
+                  <th scope="col">Amount donated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let donor of donors;let i=index;">
+                  <tr  [ngStyle]="{'font-weight': donor._id==this.email ? 'bolder':'none' }">
+                    <td [ngStyle]="{'color':donor._id==this.email ? 'red':'black'}">{{i+1}}</td>
+                    <td [ngStyle]="{'color':donor._id==this.email ? 'red':'black'}">{{donor.name}}</td>
+                    <td [ngStyle]="{'color':donor._id==this.email ? 'red':'black'}">{{donor.amount | currency:'INR' }}</td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <br>
+
+            </div>
+          </div>

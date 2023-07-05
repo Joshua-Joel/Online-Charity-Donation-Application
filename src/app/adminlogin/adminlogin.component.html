@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/charity.png" />
+    <title>Login</title>
+
+</head>
+<body>
+    <div class="main" style="position: relative;bottom: 75px;">
+        <section class="sign-in" style="background-color: #f8f8f8;height: 64ex; ">
+            <div class="container" id="c2" >
+                <div class="signin-content" >
+                    <div class="signin-image">
+                        <figure><img src="../../assets/images/charity.png" alt="signup up image"></figure>
+                        <p>new Donor? <a href="" routerLink="/donorsignup">click here</a></p>
+                        <p>new Organisation?  <a href="" routerLink="/fundraisersignup">click here</a></p>
+                    </div>
+
+                    <div class="signin-form">
+                      <h2 class="form-title">Login</h2>
+                      <form #adminlogin="ngForm" class="register-form" id="login-form"  (ngSubmit)="login(adminlogin.value)" autocomplete="off">
+                          <div class="form-group">
+                              <label for="email"><i class="zmdi zmdi-email"></i></label>
+                              <input type="email" name="email" id="email" placeholder="Your Email" required [(ngModel)]="user.umail" style="font-size: 16px;"/>
+                          </div>
+                          <div class="form-group">
+                              <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                              <input type="password" name="pass" id="your_pass" placeholder="Password"  required [(ngModel)]="user.upwd" style="font-size: 16px;"/>
+                          </div>
+                          <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <select name="role" id=""  [(ngModel)]="user.role" style="font-size: 16px;">
+                              <option value="Donor">- Role -</option>
+                              <option value="Donor">Donor</option>
+                              <option value="Admin">Admin</option>
+                              <option value="Fundraiser">Fundraiser</option>
+                            </select>
+                        </div>
+                          <div class="form-group form-button">
+                              <input type="submit" style="font-size: 16px;" (keyup.enter)="login(adminlogin.value)" name="signin" id="signin" class="form-submit"  value="Log in"/>
+                          </div>
+                      </form>
+                      <ng-container *ngIf="status!='waiting' " >
+                        <br>
+                        <p>Login failed..! Please check your credentials</p>
+                      </ng-container>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
